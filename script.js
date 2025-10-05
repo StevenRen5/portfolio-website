@@ -1,5 +1,6 @@
 
 // Declaring variables
+// Mobile navigation elements
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
