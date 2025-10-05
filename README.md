@@ -4,6 +4,8 @@
 
 This is my personal portfolio website showcasing my frontend development skills and projects. Built with HTML5, CSS3, and JavaScript, this responsive website features a modern design with smooth animations and mobile-first approach.
 
+🌐 **Live Demo:** [https://stevenren-portfolio.vercel.app/](https://stevenren-portfolio.vercel.app/)
+
 ## Features
 - **Responsive Design**: Adapts seamlessly to all devices (desktop, tablet, mobile)
 - **Interactive Elements**: Smooth animations, hover effects, and dynamic UI components
@@ -20,5 +22,8 @@ This is my personal portfolio website showcasing my frontend development skills 
 - **Achievements**: Academic honors and recognitions
 - **Contact**: Get in touch form
 
+## Deployment
+This portfolio is hosted on **Vercel** to resolve the warnings and issues that were occurring with GitHub Pages. The deployment ensures optimal performance and reliability.
+
 ## Special Thanks
-Special thanks to [@BasirS](https://github.com/BasirS) for helping me fix the warnings and hosting this portfolio on Vercel! Your support made this project possible.
+Special thanks to [@BasirS](https://github.com/BasirS) for helping me fix the GitHub Pages warnings and setting up the Vercel deployment! Your support made this project possible and accessible to everyone.
