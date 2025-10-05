@@ -1,0 +1,775 @@
+/* UNIVERSAL SELECTOR */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth; /* smooth transition between sections */
+  font-family: "Poppins";
+}
+
+/* DECLARING VARIABLES */
+
+:root { /* :root is a selector. It targets the <htmL> element. This makes these variables available globally through the CSS file */
+  --bg-color: #0a1128; /* Deep navy blue - professional dark background */
+  --second-bg-color: #1a1f3a; /* Slightly lighter navy for contrast sections */
+  --text-color: #e8f1f5; /* Soft white with slight blue tint for readability */
+  --main-color: #5B9BD5; /* Beautiful soft blue - natural and inviting */
+  --secondary-color: #7FCDFF; /* Lighter sky blue for accents */
+  --accent-glow: rgba(91, 155, 213, 0.3); /* Soft blue glow for shadows */
+}
+
+/* GENERAL ELEMENT CSS */
+
+html {
+  font-size: 60%; /* 60% of the browser default font size (16px), so ~9.6px */
+  overflow-x: hidden; /* deletes all overflow on the x-axis */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 
+Explicitly style anchor tags to override browser defaults for link color and underline.
+This is needed. Even though universal style * {} is stated, it doesn't override browser default styling */
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Custom scrollbar styling for WebKit browsers (Chrome, Safari) */
+
+::-webkit-scrollbar{
+  width: 20px; /* Styles the scrollbar track (the background area) in WebKit browsers, setting its width to 20px */
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--main-color); /* Styles the draggable thumb (the handle) of the scrollbar, setting its background color using the --main-color variable, orange */
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--bg-color);   /* Styles the scrollbar track area behind the handle, setting its background color using the --bg-color variable, dark gray */
+}
+
+/* HEADER SECTION */
+
+
+.header {
+  position: fixed; /* takes elements out of normal document flow */
+  width: 100%; /* when element is fixed positioned, width: 100% makes it stretch 100% of the viewport width (browser screen), not width of parent */
+  top: 0;
+  left: 0;
+
+  padding: 4rem 15%;
+  /* 
+    padding: 4rem 15%;
+    - 'rem' stands for "root em" and is relative to the font-size of the root element (<html>)
+    - Since html { font-size: 60%; } and the browser default is 16px, 1rem = 9.6px
+    - 1rem = 60% of 16px = 9.6px
+    - So 4rem = 4 * 9.6px = 38.4px padding on top and bottom
+    - 15% means left and right padding is 15% of the width of the containing block (usually the viewport)
+  */
+
+  background: rgba(0,0,0,0.3); /* semi-transpaent black bg (30% opacity) */
+  backdrop-filter: blur(10px); 
+  /* 
+  - Applies a blur to the background behind the element.
+  - Together, these create a frosted glass effect.
+  */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+
+#menu-icon {
+  font-size: 3.5rem;
+  color: var(--main-color);
+  display: none; /*hide hamburgeer icon right now */
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out; /* Smoothly animates property changes over 0.3s, starting and ending slowly */
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+span {
+  background: linear-gradient(120deg, #5B9BD5, #7FCDFF, #6BB6E8);
+    /*
+    linear-gradient(...): Creates a smooth, natural gradient with beautiful soft blue tones
+    120deg creates a gentle diagonal flow that feels organic and inviting
+    */
+    background-clip: text;
+    -webkit-background-clip: text;
+      /* Applies the gradient background only where the text appears */
+    color: transparent;
+     /* Makes the actual text color invisible so the background gradient becomes the visible text color */
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+.gradient-btn {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  background: linear-gradient(120deg, #5B9BD5, #7FCDFF);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: white;
+  border: none;
+  text-wrap: nowrap; /* don't want the word inside the button ("Contact Me) to wrap around when viewpot gets smaller */
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px var(--accent-glow), 0 0 40px rgba(127, 205, 255, 0.3);
+}
+
+
+/*   HOME SECTION  */
+
+section {
+  min-height: 100vh; /* section covers the entire viewport height (browser height */
+  padding: 10rem 15%;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem; /* creates space between .home-content and .home-img */
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* pushes the flex items to the right side of the container */
+  text-align: right;/* aligns the etxt inside those child blocks to the right */
+}
+
+.home-content h1{
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1; /* value of 1 is calculated by the font size of the element it's applied to: 1 x (8rem x 9.6) = line height in pixels, in this case*/
+}
+
+.home-content h3 {
+  margin: 1rem 0;
+  font-size: 4rem;
+}
+
+.home-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.home-img img {
+  width: 32vw; /* img is 32% of the viewport width, helps with the responsiveness */
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--secondary-color), 0 0 100px var(--main-color);
+  /* Adds a glowing multi-layered box-shadow effect with professional blue tones.
+  Each value adds a separate shadow layer, creating a combined effect together. */
+}
+
+.social-icons a {
+  display: inline-flex;
+  /* 
+  Makes the element a flex container to arrange its children with flexbox,
+  but the container itself behaves like an inline element, 
+  so it flows inline with surrounding text and only takes up as much width as needed.
+  */
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  color: var(--main-color);
+  margin: 3rem 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: var(--text-color);
+  background-color: var(--main-color);
+  transform: scale(1.2)translateY(-5px); /*when hover, scale by 1.2 and moves the element up by 5 px */
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: var(--main-color);
+  box-shadow: 0 4px 15px var(--accent-glow);
+  border-radius: 3rem;
+  font-size: 1.8rem;
+  color: white;
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--secondary-color);
+}
+
+.btn-group a:nth-of-type(2){ /*selects the second a eleemnt in the btn-group container */
+  background-color: transparent;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 25px transparent;
+}
+
+.btn-group a:nth-of-type(2):hover{
+  box-shadow: 0 0 25px var(--accent-glow), 0 0 40px rgba(127, 205, 255, 0.3);
+  background-color: var(--main-color);
+  color: white;
+}
+
+/* ABOUT SECTION */
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  background: var(--second-bg-color);
+}
+
+.about-img img {
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  transition: 0.3s ease-in-out;
+}
+
+.about-img img:hover {
+  box-shadow: 0 0 25px var(--main-color),
+              0 0 50px var(--secondary-color),
+              0 0 100px var(--main-color);
+}
+
+.about-content h2 {
+  font-size: 7rem;
+  text-align: left;
+}
+
+.about-content {
+  font-size: 1.8rem;
+}
+
+.about-content .btn {
+  margin: 3rem 0; 
+}
+
+/* SERVICES SECTION */
+
+.heading {
+  text-align: center;
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+
+.services {
+  background-color: var(--bg-color);
+  color: black;
+}
+
+.services h2 {
+  color: var(--text-color);
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Make columns that are at least 300px wide.
+   Use as many columns as will fit in a row (auto-fit).
+   1fr means each column takes up equal space in the row.
+   minmax(300px, 1fr) says: "Make each column at least 300px wide, and let it grow to share the space equally with other columns." */
+  align-items: center; /* each grid item will be centereed vertically inside their grid container */
+  gap: 2.5rem;
+}
+
+.service-box {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  border-radius: 3rem;
+  cursor: pointer;
+  border: 5px solid transparent;
+  transition: 0.4s ease-in-out;
+}
+
+.service-box:hover {
+  background: var(--second-bg-color);
+  color: var(--main-color);
+  border: 5px solid var(--main-color);
+  transform: scale(1.03);
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.service-info i {
+  font-size: 8rem;
+}
+
+.service-info h4 {
+  font-size: 4rem;
+  margin: 2rem;
+  font-weight: 800;
+}
+
+.service-info p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* EXPERIENCE SECTION */
+
+.experience {
+  background-color: var(--second-bg-color);
+  padding: 10rem 15%;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: var(--main-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: var(--bg-color);
+  border: 4px solid var(--main-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -13px;
+}
+
+.timeline-content {
+  padding: 2rem 3rem;
+  background-color: var(--bg-color);
+  position: relative;
+  border-radius: 1.5rem;
+  border: 2px solid var(--main-color);
+  transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 0 25px var(--accent-glow);
+  transform: scale(1.02);
+}
+
+.timeline-content h3 {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.timeline-content h4 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.timeline-date {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.timeline-content p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* PROJECT SECTION */
+
+.projects {
+  background-color: var(--bg-color);
+}
+
+.project-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  place-items: center;
+  /* 
+  A shorthand property in CSS Grid and Flexbox that centers items both vertically and horizontally 
+  inside their grid container or flex container.
+  Equivalent to setting:
+    align-items: center;  (vertical alignment)
+    justify-items: center; (horizontal alignment)
+  */
+  gap: 3rem; /* Sets a 3rem gap (space) between both rows and columns in a grid or flex container */
+  row-gap: 5rem; /* Overrides the row gap specifically, making vertical gaps (the rows) 5rem instead of 3rem */
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 3rem;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  height: 550px;
+  width: 400px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--main-color);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 25px var(--main-color),
+              0 0 50px var(--secondary-color);
+  transform: scale(1.02);
+}
+
+.project-card img {
+  max-width: 300px;
+  border-radius: 2em;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 3rem;
+}
+
+.project-card p {
+  font-size: 1.6rem;
+}
+
+.project-card div a {
+  color: white;
+}
+
+/* ACHIEVEMENTS SECTION */
+
+.achievements {
+  background-color: var(--second-bg-color);
+}
+
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.achievement-card {
+  background-color: var(--bg-color);
+  padding: 3rem 2.5rem;
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px var(--accent-glow), 0 0 50px rgba(127, 205, 255, 0.3);
+}
+
+.achievement-card i {
+  font-size: 5rem;
+  color: var(--main-color);
+  margin-bottom: 1.5rem;
+}
+
+.achievement-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.achievement-date {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.achievement-card p:last-child {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+  background-color: var(--bg-color);
+}
+
+.contact h2{
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.contact form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.contact form .input-box input, 
+.contact form textarea {
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  margin: 1.5rem 0;
+  resize: none; /* prevents user from resizing the textarea width/height */
+}
+
+/* FOOTER SECTION */
+
+.footer {
+  background-color: var(--second-bg-color);
+  padding: 50px 0;
+}
+
+.footer .social-icons {
+text-align: center;
+}
+
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer ul li a {
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--main-color);
+}
+
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+@media(max-width: 1285px){
+  #menu-icon{
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0,0,0,0.8); /*transparent black color */
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+
+    opacity: 0; /* hides the navbar */
+    transition: 0.2s ease-in;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--text-color);
+  }
+
+  .navbar.active {
+    display: block;
+    opacity: 1;
+
+  }
+
+  .gradient-btn {
+    display: none;
+  }
+
+  .home {
+    flex-direction: column-reverse; 
+    /* Stacks flex items vertically but reverses their order, 
+    so the last item appears at the top and the first at the bottom:
+    the last child (.home-img) appears above the first child (.home-content*/
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 56vw;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about h2 {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .about img {
+    width: 52vw;
+  }
+
+  .contact form {
+    flex-direction: column;
+  }
+
+  /* Timeline responsive */
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0%;
+  }
+
+  .timeline-dot {
+    left: 18px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 18px;
+  }
+
+  .timeline-content h3 {
+    font-size: 2rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-content p {
+    font-size: 1.4rem;
+  }
+
+  /* Achievements responsive */
+  .achievements-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
