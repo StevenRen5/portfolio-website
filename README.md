@@ -1,4 +1,4 @@
-This project is a fully responsive personal portfolio website built using HTML, CSS, and JavaScript. I created it by following the [How To Web Dev](https://www.youtube.com/watch?v=uTPO6fKtBvM) YouTube Tutorial, which helped me enhance my frontend development skills. This is my third web development project. 
+This is a fully responsive personal portfolio website for Steven Ren, built using HTML, CSS, and JavaScript. 
 
 ## Features
 
@@ -15,8 +15,3 @@ This project is a fully responsive personal portfolio website built using HTML, 
 - Practiced using CSS transform for subtle animations and effects
 - Applied linear-gradient to create visually appealing background effects
 - Strengthened skills in building responsive layouts and interactive navigation using CSS properties like **display**, **position**, and **media queries**
-
-[View Website](https://stevenren5.github.io/html-css-personal-portfolio-website/)
-
- 
-
