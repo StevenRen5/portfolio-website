@@ -1,6 +1,6 @@
 # Steven Ren Portfolio
 
-## A personal website for a friend
+## Professional Portfolio Website
 
 We put together this portfolio website for Steven Ren, who's a friend and needed help getting his work online. He was running into some warnings and issues with his original site, so we rebuilt it from scratch using HTML, CSS, and JavaScript.
 
