@@ -186,7 +186,7 @@ section {
 }
 
 .home-content p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.8;
 }
@@ -292,6 +292,10 @@ section {
 .about-content h2 {
   font-size: 7rem;
   text-align: left;
+}
+
+.about-content p {
+  line-height: 1.8;
 }
 
 .about-content {
@@ -446,13 +450,13 @@ section {
 }
 
 .timeline-content h3 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--main-color);
   margin-bottom: 1rem;
 }
 
 .timeline-content h4 {
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   color: var(--text-color);
   margin-bottom: 1rem;
   font-weight: 500;
@@ -460,11 +464,11 @@ section {
 
 .timeline-date {
   color: var(--secondary-color);
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   font-weight: 400;
 }
 
-.timeline-content p {
+.timeline-content li {
   font-size: 1.6rem;
   line-height: 1.8;
   color: var(--text-color);
@@ -502,7 +506,7 @@ section {
   gap: 2rem;
   padding: 5rem 2rem;
   height: 550px;
-  width: 400px;
+  width: 450px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 0 5px var(--main-color);
