@@ -4,7 +4,7 @@
 
 This is my personal portfolio website showcasing my frontend development skills and projects. Built with HTML5, CSS3, and JavaScript, this responsive website features a modern design with smooth animations and mobile-first approach.
 
-🌐 **Live Demo:** [https://rensteven-portfolio.vercel.app/](https://stevenren-portfolio.vercel.app/)
+🌐 **Live Demo:** [https://rensteven-portfolio.vercel.app/](https://rensteven-portfolio.vercel.app/)
 
 ## Features
 - **Responsive Design**: Adapts seamlessly to all devices (desktop, tablet, mobile)
